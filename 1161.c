@@ -1,20 +1,20 @@
 #include <stdio.h>
+
 int main()
 {
-  int i;
-  long long int m, n, x, y;
+  int i, m, n;
+  long long int fat[21];
 
-  while (scanf("%lld %lld", &m, &n))
+  while (scanf("%d %d", &m, &n) != EOF)
   {
-    x = 1;
-    y = 1;
-    for (i = m; i > 0; --i, m--)
-      x *= m;
+    fat[0] = 1, fat[1] = 1, i = 1;
+    while (m > i || n > i)
+    {
+      fat[i + 1] = fat[i] * (i + 1);
+      i++;
+    }
 
-    for (i = n; i > 0; --i, n--)
-      y *= n;
-
-    printf("%lld\n", x + y);
+    printf("%lld\n", fat[m] + fat[n]);
   }
 
   return 0;

@@ -19,7 +19,7 @@ int main()
   double vx, vy, v, x, a, h, aph, h0;
   int i, n, p1, p2;
 
-  while (scanf("%lf", &h0))
+  while (scanf("%lf", &h0) != EOF)
   {
     h = 0.0;
     scanf("%d %d", &p1, &p2);
